@@ -9,4 +9,4 @@ RUN pip install udemy-enroller
 
 COPY . .
 
-CMD [ "python", "./udemy_enroller --browser=chromium" ]
+CMD [ "python", "./udemy_enroller.py --browser=chromium" ]
