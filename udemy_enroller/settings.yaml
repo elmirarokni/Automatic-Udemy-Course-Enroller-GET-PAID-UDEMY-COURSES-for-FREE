@@ -1,0 +1,6 @@
+udemy:
+  email: "noskhe@proton.me" # Enter your Udemy registered email here
+  password: "tuhjkTWr1ZCNPy" # Enter your Udemy password here
+  zipcode: "20147" # If Udemy requires a zipcode for your country, enter it here.
+  languages: [] # If you want to limit the languages of courses to claim e.g ["French", "Spanish"]
+  categories: []  # If you want to limit the categories of courses to claim
