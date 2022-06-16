@@ -5,10 +5,13 @@ from webdriver_manager.core.utils import ChromeType
 from webdriver_manager.firefox import GeckoDriverManager
 from webdriver_manager.microsoft import EdgeChromiumDriverManager, IEDriverManager
 from webdriver_manager.opera import OperaDriverManager
-
+from pyvirtualdisplay import Display
 from udemy_enroller.logging import get_logger
 
 logger = get_logger()
+# set xvfb display since there is no GUI in docker container.
+display = Display(visible=0, size=(1325.744"))
+display.start()
 
 VALID_FIREFOX_STRINGS = {"ff", "firefox"}
 VALID_CHROME_STRINGS = {"chrome", "google-chrome"}
@@ -88,6 +91,8 @@ class DriverManager:
         options = ChromeOptions()
         # We need to run headless when using github CI
         options.add_argument("--headless")
+        options.add_argument("--no-sandbox")
+        options.add_argument("--disable-dev-shm-usage")
         options.add_argument("user-agent={0}".format(user_agent))
         options.add_argument("accept-language=en-GB,en-US;q=0.9,en;q=0.8")
         options.add_argument("--window-size=1325x744")
