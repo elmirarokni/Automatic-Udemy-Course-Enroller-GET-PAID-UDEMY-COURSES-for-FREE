@@ -5,8 +5,8 @@ WORKDIR /usr/src/app
 COPY udemy_enroller .
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install udemy-enroller
 
 COPY . .
 
-CMD [ "python", "./setup.py" ]
 CMD [ "python", "./udemy_enroller --browser=chromium" ]
